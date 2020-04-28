@@ -1,6 +1,28 @@
-// navigate to this folder and execute "go run main.go"
+// navigate to this folder and execute "go run data_types.go"
+
+// The package “main” tells the Go compiler that the package
+// should compile as an executable program instead of a shared library.
+// The main function in the package “main” will be the entry point of our executable program.
+// When you build shared libraries, you will not have any main package and main function in the package.
+
+// The naming convention for Go package is to use
+// the name of the system directory where we are putting our Go source files.
+// Within a single folder, the package name will be same for the all source files which belong to that directory.
+
+// To download and install third-party Go packages use "go get" command eg. "go get gopkg.in/mgo.v2"
+
+// When you write Go packages, you can provide a function “init”
+// that will be called at the beginning of the execution time.
+// The init method can be used for adding initialization logic into the package.
+
+// If we imported a package and are not using the package identifier in the program,
+// Go compiler will show an error. In such a situation, we can use a blank identifier ( _ ) as the package alias name,
+// so the compiler ignores the error of not using the package identifier, but will still invoke the init function.
+
+// Build Go package for reusing with other packages using "go install" command
 package main
 
+// import fmt package
 import (
 	"fmt"
 )
@@ -49,6 +71,10 @@ func main()  {
 	lastName := "Horobeanu"
 	fmt.Println(lastName)
 	//Horobeanu
+
+	// string is alias on []byte
+	fmt.Println([]byte(lastName))
+	//[72 111 114 111 98 101 97 110 117]
 
 	complexNumber := complex(1, 8)
 	fmt.Println(complexNumber)
