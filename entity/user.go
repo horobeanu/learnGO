@@ -10,7 +10,7 @@ type user struct {
 
 // Bind a function to a type
 // by using (someName bindingType) before function params
-// (uc User) <- this transforms a function into a method
+// (uc User) <- this transforms GetPassword() function into a method on "user" type
 func (uc user) GetPassword() string {
 	return uc.password
 }
